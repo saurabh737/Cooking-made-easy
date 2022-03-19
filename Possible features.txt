@@ -1,0 +1,34 @@
+
+
+1) Get Recipe feature - 
+
+When we input any ingredients and/or time required to make that recipe - 
+
+So we can display - 
+ - Name of the Food recipe
+ - Minutes required to cook that recipe
+ - Nutrition values of that recipe (Protein, Fat, Carbs etc.)
+ - Total steps required to make that recipe
+ - Step by step instructions for that recipe
+ - Description of Recipe
+ - Ingredients for that recipe
+ - Total ingredients required to make that recipe
+
+Favorite feature - 
+
+We add an option beside all recipes to add that recipe to favourite list.
+We display favorite recipes option to view all the users favorite recipes.
+
+
+2) Get quick recipe feature - 
+
+We are categorizing the recipes based upon 60min or less, 30 min or less etc (main_tags from nb) and displaying
+the recipes to user
+
+3) Top recipes of the month feature - 
+
+Show random sample of top 20 recipes based upon ratings along with reviews.
+
+
+4) Login feature.
+
