@@ -15,7 +15,12 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       crossorigin="anonymous"
     />
-   
+    <link 
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" 
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+    crossorigin="anonymous"
+    />
 
     <title>{% block title %}Home{% endblock %}</title>
   </head>
@@ -33,19 +38,19 @@
       <div class="collapse navbar-collapse" id="navbar-collapse-main">
         <div class="navbar-nav">
           <a class="nav-item nav-link" id="home" href="/"><i>Cooking made Easy!! </i></a>
-          <a class="nav-item nav-link" id="home" href="/">Get Recipes</a>
+          <a class="nav-item nav-link" id="home" href="/getrecipes">Get Recipes</a>
           <a class="nav-item nav-link" id="home" href="/">Get Quick Recipes</a>
           <a class="nav-item nav-link" id="home" href="/">Top Recipes of the month</a>
-          <ul class = "nav navbar-nav navbar-right">
+          <div class = "d-flex justify-content-end">
             <li class="nav-item"> <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a></li>
             <li class="nav-item"> <a class="nav-item nav-link" id="login" href="/login">Login</a></li>
-          </ul>
+        </div>
         </div>
       </div>
     </nav>
     
     <div class="container">{% block content %} 
-    <div class = "home">
+      <div class = "home">
         <div class="container-fluid position-relative overflow-hidden mb-4 mb-sm-0" style="min-height: 95vh;">
             <div class="container mt-xl-5 mt-lg-5">
               <div class="row pt-xl-5 pt-lg-5 d-sm-flex flex-column-reverse flex-lg-row text-center text-md-start">
@@ -54,14 +59,12 @@
                     <!--       TYPED JS       -->
                     <span id="typed"></span>
                   </h3>
-        
                   <h1 class="h1 fw-bold">Cooking made easy!!</h1>
-                  <p class="fs-6 fw-medium w-75 width-100-important opacity-75">Delicious recipes on a single click - Project by Team DexLab</p>
-                  <a href="#" class="btn medium-candy-apple-red text-white fs-5">Get started</a>
+                  <p class="">Delicious recipes on a single click - Project by Team DexLab</p>
+                  <a href="/" class="btn btn-dark">Get started</a>
                 </div>
                 <div class="col-xl-6 col-lg-5 mt-lg-5 position-relative">
-                  <img src="https://adityawahyuramadhan.github.io/hosted-assets/Freelanco/hero-section-image.png" alt="" class="img-fluid scale-up">
-                  <img src="https://adityawahyuramadhan.github.io/hosted-assets/Freelanco/image-floor.svg" alt="" class="position-absolute locate-floor scale-down" style="z-index: -99;">
+                  <img src="https://www.licious.in/blog/wp-content/uploads/2020/12/Hyderabadi-chicken-Biryani-600x600.jpg" alt="" class="img-fluid scale-up">
                 </div>
               </div>
             </div>
