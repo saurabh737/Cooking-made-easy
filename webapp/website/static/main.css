@@ -7,3 +7,14 @@
     width: 100%;
     background-size: cover;
 }
+
+.ingredients_text_box {
+    border-radius:0.5em;
+    border-color: rgb(139, 150, 150);
+}
+
+.form-control-inline {
+    min-width: 0;
+    width: 30%;
+    display: inline;
+}
