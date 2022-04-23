@@ -39,11 +39,17 @@
           <a class="nav-item nav-link" id="home" href="/"><i>Cooking made Easy!! </i></a>
           <a class="nav-item nav-link" id="home" href="/getrecipes">Recipes</a>
           <a class="nav-item nav-link" id="home" href="/">Quick Recipes</a>
-          <a class="nav-item nav-link" id="home" href="/">Top Recipes of the month</a>          
+          <a class="nav-item nav-link" id="home" href="/">Top Recipes of the month</a>
+          {% if session.name %}
+          <div class = "d-flex justify-content-end">
+            <li class="nav-item"> <a class="nav-item nav-link" id="login" href="/logout">Logout</a></li>
+        </div>
+          {% else %}    
           <div class = "d-flex justify-content-end">
             <li class="nav-item"> <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a></li>
             <li class="nav-item"> <a class="nav-item nav-link" id="login" href="/login">Login</a></li>
         </div>
+        {% endif %}
         </div>
       </div>
     </nav>
