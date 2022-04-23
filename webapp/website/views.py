@@ -1,4 +1,7 @@
 from flask import Blueprint, render_template
+from flask_login import current_user
+from flask_login import login_required, current_user
+
 
 views = Blueprint('views', __name__)
 
@@ -6,14 +9,6 @@ views = Blueprint('views', __name__)
 def home():
     return render_template("home.html")
 
-
-
-
-'''
-Rendering html pages - 
-
-put home page template code inside home.html
-
-def home():
-    return render_template("home.html")
-'''
+@views.route('/getrecipes')
+def getrecipes():
+    return render_template("getrecipes.html")
