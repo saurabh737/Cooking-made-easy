@@ -2,10 +2,7 @@ from distutils.log import error
 from unicodedata import name
 from urllib.parse import uses_relative
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session
-import requests, json
-from sympy import primefactors
-from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import login_user, login_required, logout_user, current_user, LoginManager
+import requests
 from .models import *
 # login_manager = LoginManager()
 # from flask_session import Session
@@ -31,7 +28,8 @@ def login():
             # User(userData)
             print(session,"=-=-=-=-", userData["name"])
             session["name"] = userData["name"]
-            return render_template("getrecipes.html")
+            session["user_id"] = userData["user_id"]
+            return redirect(url_for('views.getrecipes'))
         elif req.status_code == 401:
             flash('Incorrect credentials!', category="error")
     return render_template("login.html")
@@ -40,6 +38,7 @@ def login():
 def logout():
     flash('Logged Out Successfully', category='success')
     session['name'] = None
+    session["user_id"] = None
     return render_template("home.html")
 
 @auth.route('/sign-up', methods = ['GET', 'POST'])
@@ -70,18 +69,3 @@ def sign_up():
 
     return render_template("signup.html")
 
-# class User(self, data):
-#     name = data.name
-#     password = db.StringField()
-#     email = db.StringField()
-#     def to_json(self):
-#         return {"name": self.name,
-#                 "email": self.email}
-#     def is_authenticated(self):
-#         return True
-#     def is_active(self):
-#         return True
-#     def is_anonymous(self):
-#         return False
-#     def get_id(self):
-#         return str(self.id)

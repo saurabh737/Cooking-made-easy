@@ -1,12 +1,4 @@
 
-.home {
-    /* background: url(cooking-landing-page.png) no-repeat center center fixed; */
-    display: table;
-    height: 100%;
-    position: relative;
-    width: 100%;
-    background-size: cover;
-}
 
 .ingredients_text_box {
     border-radius:0.5em;
@@ -25,3 +17,19 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.recipe_images {
+    width: 300px;
+    height: 150px;
+}
+
+.recipe_images img {
+    width: 100%;
+    height: auto;
+}
+
+.material-icons.md-light { color: rgb(247, 11, 11); }
+
+.material-icons.md-light :hover { color: rgb(247, 11, 11); }
+
+.material-icons.md-light.md-inactive { color: rgba(238, 228, 228, 0.945); }

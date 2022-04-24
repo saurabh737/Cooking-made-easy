@@ -1,3 +1,4 @@
+
 {% extends "base.html" %} {% block title %} Get Recipes {% endblock %}
 {% block content %}
 
@@ -40,16 +41,55 @@
         name = "cooking_time"
         class = "ingredients_text_box"
         /><br><br>
-
+        </div>
+</form>
+    <form method="POST">
         <button type="submit" class="btn btn-light">Get Recipes</button>
-        
+    </form>
+    <br>
+<div class="container">
+    <h3>Data from API : </h3>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Recipe ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Average Rating</th>
+                <th scope="col">Cooking Time</th>
+                <th scope="col">Image</th>
+                <th scope="col">Steps Count</th>
+                <th scope="col">Add to Favorites</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for i in req_data %}
+              <tr>
+                <td>{{ i['recipe_id'] }}</td>
+                <td>{{ i['name'] }}</td>
+                <td>{{ i['description'] }}</td>
+                <td>{{ i['avg_rating'] }}</td>
+                <td>{{ i['cooktime'] }}</td>
+                <td class = "recipe_images">
+                    <img src = "{{ i['image'] }}">
+                </td>
+                <td>{{ i['steps_cnt'] }}</td>
+                {% if i['fav'] %}
+                <td><a href="#"><span class="material-icons md-light">favorite</span></a></td>
+                {% else %}
+                <td><a href="#"><span class="material-icons md-light">favorite_border</span></a></td>
+                {% endif %}
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
     </div>
 
     {% else %}
     <div class = "init-getrecipes">
         <h1 class="h1 fw-bold">You haven't registered with us. Please Login/Sign-Up to continue.</h1>
-        <a href = "/login" class = "btn btn-info sign-bttn">Login</a>
-        <a href = "/sign-up" class = "btn btn-info sign-bttn">Sign-Up</a>
+        <a href = "/login" class = "btn btn-primary">Login</a>
+        <a href = "/sign-up" class = "btn btn-primary">Sign-Up</a>
     </div>
     {% endif %}
 
