@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block title %} Get Recipes {% endblock %}
+{% block content %}
+
+{% if session.name %}
+
+<!-- <h1 class="h1 fw-bold">Hello {{ session.name }} </h1> -->
+<h3 align = "left">Recipe Info Page</h3><br><br>
+
+<div class = "recipe_info_box">
+    <h2>Recipe ID: {{ recipe_data['recipe_id'] }} </h2>
+    <h2>Name: <span style="text-transform:uppercase">{{ recipe_data['name'] }}</span></h2>
+    <p class = "recipe_images"><img src = "{{ recipe_data['image'] }}"></p>
+    <h2>Description: {{ recipe_data['description'] }} </h2>
+    <h2>Cooking Time: {{ recipe_data['cooktime'] }} </h2>
+    <h2>Steps count: {{ recipe_data['steps_cnt'] }} </h2>
+    <h2>Steps: </h2><br>
+    {% for step in  recipe_data['steps'] %}
+    <ul>
+        <li>{{ step }}</li>
+    </ul>
+    {% endfor %}
+    <h2>Average Rating: {{ recipe_data['avg_rating'] }} </h2>
+</div>
+
+{% endif %}
+
+
+{% endblock %}

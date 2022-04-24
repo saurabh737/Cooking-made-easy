@@ -81,28 +81,30 @@
         {% endfor %}
       {% endif %}
     {% endwith %}
-    <div class="container">{% block content %} 
-      <div class = "home">
-        <div class="container-fluid position-relative overflow-hidden mb-4 mb-sm-0" style="min-height: 95vh;">
-            <div class="container mt-xl-5 mt-lg-5">
-              <div class="row pt-xl-5 pt-lg-5 d-sm-flex flex-column-reverse flex-lg-row text-center text-md-start">
-                <div class="col-xl-6 col-lg-7 pt-xl-5 mt-xl-5 mt-lg-5">
-                  <h3 class="h3 fw-semibold opacity-75">
-                    <!--       TYPED JS       -->
-                    <span id="typed"></span>
-                  </h3>
-                  <h1 class="h1 fw-bold">Cooking made easy!!</h1>
-                  <p class="">Delicious recipes on a single click - Project by Team DexLab</p>
-                  <a href="/getrecipes" class="btn btn-dark">Get started</a>
-                </div>
-                <div class="col-xl-6 col-lg-5 mt-lg-5 position-relative">
-                  <img src="https://www.licious.in/blog/wp-content/uploads/2020/12/Hyderabadi-chicken-Biryani-600x600.jpg" alt="" class="img-fluid scale-up">
+    <div class = "landing_page">
+      <div class="container">{% block content %} 
+        <div class = "home">
+          <div class="container-fluid position-relative overflow-hidden mb-4 mb-sm-0" style="min-height: 95vh;">
+              <div class="container mt-xl-5 mt-lg-5">
+                <div class="row pt-xl-5 pt-lg-5 d-sm-flex flex-column-reverse flex-lg-row text-center text-md-start">
+                  <div class="col-xl-6 col-lg-7 pt-xl-5 mt-xl-5 mt-lg-5">
+                    <h3 class="h3 fw-semibold opacity-75">
+                      <!--       TYPED JS       -->
+                      <span id="typed"></span>
+                    </h3>
+                    <h1 class="h1 fw-bold">Cooking made easy!!</h1>
+                    <p class="">Delicious recipes on a single click - Project by Team DexLab</p>
+                    <a href="/getrecipes" class="btn btn-dark">Get started</a>
+                  </div>
+                  <div class="col-xl-6 col-lg-5 mt-lg-5 position-relative">
+                    <img src="https://i.pinimg.com/originals/88/5f/62/885f62675329c0f8a605ffe87bd61657.jpg" alt="" class="img-fluid scale-up">
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        {% endblock %}
+          {% endblock %}
+      </div>
     </div>
     
       <script 
