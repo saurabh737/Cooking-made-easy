@@ -58,14 +58,16 @@ def sign_up():
         flash('Passwords dont match', category="error")
     elif request.method == 'POST':
         req = requests.post('http://127.0.0.1:3000/user/signup', json = data)
-    
+        userData = req.json()
+
         if req.status_code == 401:
             flash('Email already exists', category="error")
         elif req.status_code == 503:
             flash('Something went wrong!', category="error")
         else:
-            flash('Account created!', category='success')
-            return render_template("getrecipes.html")
+            session["name"] = userData["name"]
+            session["user_id"] = userData["user_id"]
+            return redirect(url_for('views.getrecipes'))
 
     return render_template("signup.html")
 

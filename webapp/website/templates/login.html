@@ -1,6 +1,52 @@
 {% extends "base.html" %} {% block title %}Login{% endblock %} {% block
     content %}
-    <div class = "landing_page">
+    <div class="landing_page">
+    <section class="vh-100 bg-image">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h2 class="text-uppercase text-center mb-5">LOGIN</h2>
+  
+                <form method = "POST">
+  
+                  <div class="form-outline mb-4">
+                    <input type="email" 
+                    id="form3Example3cg" 
+                    class="form-control form-control-lg" 
+                    name = "email"
+                    />
+                    <label class="form-label" for="form3Example3cg">Your Email</label>
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <input type="password" 
+                    id="form3Example4cg" 
+                    class="form-control form-control-lg" 
+                    name = "password"
+                    />
+                    <label class="form-label" for="form3Example4cg">Password</label>
+                  </div>
+  
+                  
+                  <div class="d-flex justify-content-center">
+                    <button type="submit"
+                      class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login</button>
+                  </div>
+  
+                </form>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+    <!-- <div class = "landing_page">
     <form method="POST">
         <h3 align="center">Login</h3>
         <div class="form-group">
@@ -26,5 +72,5 @@
         <br />
         <button type="submit" class="btn btn-primary">Login</button>
       </form>
-      </div>
+      </div> -->
     {% endblock %}

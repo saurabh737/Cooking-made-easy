@@ -1,5 +1,6 @@
 {% extends "base.html" %} {% block title %} Get Recipes {% endblock %}
 {% block content %}
+<div class = "landing_page">
 
 {% if session.name %}
 
@@ -7,7 +8,7 @@
 <h3 align = "left">Recipe Info Page</h3><br><br>
 
 <div class = "recipe_info_box">
-    <h2>Recipe ID: {{ recipe_data['recipe_id'] }} </h2>
+    <!-- <h2>Recipe ID: {{ recipe_data['recipe_id'] }} </h2> -->
     <h2>Name: <span style="text-transform:uppercase">{{ recipe_data['name'] }}</span></h2>
     <p class = "recipe_images"><img src = "{{ recipe_data['image'] }}"></p>
     <h2>Description: {{ recipe_data['description'] }} </h2>
@@ -24,5 +25,5 @@
 
 {% endif %}
 
-
+</div>
 {% endblock %}

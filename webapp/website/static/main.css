@@ -5,7 +5,8 @@ body,html {
     
 }
 
-.ingredients_text_box {
+#n_ingredients, #cooking_time, #get_recipes_btn {
+    display: inline-block;
     border-radius:0.5em;
     border-color: rgb(139, 150, 150);
 }
@@ -39,9 +40,21 @@ body,html {
 
 .material-icons.md-light.md-inactive { color: rgba(238, 228, 228, 0.945); }
 
+
 .landing_page {
     background-color: #F0D2CB;
     width: 100%;
     height: 100%;
     overflow-y: auto;
+}
+
+.signup_page {
+    background-color: #F0D2CB;
+    width: 100%;
+    height: 100%;
+}
+
+.signup_banner {
+    width: 100%;
+    height: 100%;
 }
