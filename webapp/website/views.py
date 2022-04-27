@@ -72,7 +72,7 @@ def recipeinfo():
         url = 'http://127.0.0.1:3000/recipes/metadata?recipe_id='+ str(recipe_id_show) + '&user_id=' + str(session["user_id"])
         req = requests.get(url)
         recipe_data = req.json()
-        print(recipe_data)
+        
 
     
     return render_template("recipeinfo.html", recipe_data = recipe_data)
@@ -97,7 +97,6 @@ def userfavourites():
         url = 'http://127.0.0.1:3000/activity/getfavourite'
         req = requests.post(url, json = data)
         # user_data = req.json()
-        print(req.status_code, url)
 
         if req.status_code == 204:
             user_data = []

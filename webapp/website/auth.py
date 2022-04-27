@@ -32,6 +32,8 @@ def login():
             return redirect(url_for('views.getrecipes'))
         elif req.status_code == 401:
             flash('Incorrect credentials!', category="error")
+        elif req.status_code == 403:
+            flash('Email ID not found! Please create a new account!', category="error")
     return render_template("login.html")
 
 @auth.route('/logout')

@@ -50,7 +50,7 @@
                     <td><a href="{{ url_for('views.recipeinfo', recipe_id_get = i['recipe_id']) }}" >{{ i['name'] }}</a></td>
                     <td>{{ i['description'] }}</td>
                     <td>{{ i['avg_rating'] }}</td>
-                    <td>{{ i['cooktime'] }}</td>
+                    <td>{{ i['time'] }}</td>
                     <td class = "recipe_images">
                         <img src = "{{ i['image'] }}">
                     </td>
