@@ -4,14 +4,10 @@ from urllib.parse import uses_relative
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session
 import requests
 from .models import *
-# login_manager = LoginManager()
-# from flask_session import Session
+
 
 auth = Blueprint('auth', __name__)
 
-# @login_manager.user_loader
-# def load_user(user_id):
-#     return User.get(user_id)
 
 @auth.route('/login', methods = ['GET', 'POST'])
 def login():
