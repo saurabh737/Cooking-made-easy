@@ -18,7 +18,7 @@ def login():
     data['email'] = email
     data['password'] = password
     if request.method == 'POST':
-        req = requests.post('http://127.0.0.1:3000/user/login', json = data)
+        req = requests.post('http://149.165.155.4:3000/user/login', json = data)
         userData = req.json()
         if req.status_code == 200:
             # User(userData)
@@ -55,7 +55,7 @@ def sign_up():
     if password1 != password2:
         flash('Passwords dont match', category="error")
     elif request.method == 'POST':
-        req = requests.post('http://127.0.0.1:3000/user/signup', json = data)
+        req = requests.post('http://149.165.155.4:3000/user/signup', json = data)
         userData = req.json()
 
         if req.status_code == 401:

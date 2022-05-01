@@ -22,7 +22,7 @@ def getrecipes():
     
     #print(n_ingredients, cooking_time)
     if n_ingredients or cooking_time:
-        url = 'http://127.0.0.1:3000/recipes/filter?user_id='+ str(session["user_id"])
+        url = 'http://149.165.155.4:3000/recipes/filter?user_id='+ str(session["user_id"])
 
         if n_ingredients and not cooking_time:
             url += '&n_steps=' + str(n_ingredients)
@@ -48,13 +48,13 @@ def getrecipes():
             if status_show is not None:
 
                 if status_show == 'True':
-                    url = 'http://127.0.0.1:3000/activity/deletefavourite'
+                    url = 'http://149.165.155.4:3000/activity/deletefavourite'
                     req_status = requests.post(url, json = data)
                 else:
-                    url = 'http://127.0.0.1:3000/activity/addfavourite'
+                    url = 'http://149.165.155.4:3000/activity/addfavourite'
                     req_status = requests.post(url, json = data)
 
-            url = 'http://127.0.0.1:3000/recipes/getall?user_id='+ str(session["user_id"])
+            url = 'http://149.165.155.4:3000/recipes/getall?user_id='+ str(session["user_id"])
             print(url)
             req = requests.get(url)
             req_data = req.json()
@@ -69,7 +69,7 @@ def recipeinfo():
     recipe_id_show = request.args.get('recipe_id_get', None)
     
     if len(session) != 0:
-        url = 'http://127.0.0.1:3000/recipes/metadata?recipe_id='+ str(recipe_id_show) + '&user_id=' + str(session["user_id"])
+        url = 'http://149.165.155.4:3000/recipes/metadata?recipe_id='+ str(recipe_id_show) + '&user_id=' + str(session["user_id"])
         req = requests.get(url)
         recipe_data = req.json()
         
@@ -91,10 +91,10 @@ def userfavourites():
         data['recipe_id'] = recipe_id_show
 
         if status_show:
-            url_status = 'http://127.0.0.1:3000/activity/deletefavourite'
+            url_status = 'http://149.165.155.4:3000/activity/deletefavourite'
             req_status = requests.post(url_status, json = data)
 
-        url = 'http://127.0.0.1:3000/activity/getfavourite'
+        url = 'http://149.165.155.4:3000/activity/getfavourite'
         req = requests.post(url, json = data)
         # user_data = req.json()
 
