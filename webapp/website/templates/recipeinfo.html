@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block title %} Get Recipes {% endblock %}
+{% block content %}
+<div class = "landing_page">
+
+{% if session.name %}
+
+<!-- <h1 class="h1 fw-bold">Hello {{ session.name }} </h1> -->
+
+<div class = "recipe_info_box">
+    <h2 class="h2 fw-bold"><span style="text-transform:uppercase">{{ recipe_data['name'] }}</span></h2>
+    <p class = "recipe_images_info"><img src = "{{ recipe_data['image'] }}"></p>
+    <div class="container">
+        <div class = "home">
+          <div class="container-fluid position-relative overflow-hidden mb-4 mb-sm-0" style="min-height: 95vh;">
+              <div class="container mt-xl-1 mt-lg-5">
+                <div class="row pt-xl-5 pt-lg-5 d-sm-flex flex-column-reverse flex-lg-row text-center text-md-start">
+                  <div class="col-xl-6 col-lg-7 pt-xl-5 mt-xl-5 mt-lg-5">
+                    <h3 class="h3 fw-semibold opacity-75">
+                      <!--       TYPED JS       -->
+                      <span id="typed"></span>
+                    </h3>
+                    <h3>Description: </h3><p style="font-size: 18px">{{ recipe_data['description'] }} </p><br>
+                    <h3>Cooking Time:</h3><p style="font-size: 18px">{{ recipe_data['time'] }} </p><br>
+                    <h3>Steps count: </h3><p style="font-size: 18px">{{ recipe_data['steps_cnt'] }} </p><br>
+                    <h3>Average Rating: </h3><p style="font-size: 18px">{{ recipe_data['avg_rating'] }} </p><br>
+                  </div>
+                  <div class="col-xl-6 col-lg-5 mt-lg-5 position-relative">
+                    <h2>Steps: </h2><br>
+                    <ol>
+                        {% for step in  recipe_data['steps'] %}
+                        
+                        <li style="font-size: 20px">{{ step }}</li>
+                        
+                        {% endfor %}
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+</div>
+
+{% endif %}
+
+</div>
+{% endblock %}

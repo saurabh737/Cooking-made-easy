@@ -1,0 +1,68 @@
+{% extends "base.html" %} {% block title %} Get Recipes {% endblock %}
+{% block content %}
+<div class = "landing_page">
+    {% if session.name %}
+
+    <div class="container">
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <!-- <th scope="col">Recipe ID</th> -->
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Average Rating</th>
+                    <th scope="col">Cooking Time</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Steps Count</th>
+                    <th scope="col">Remove from Favorites</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% if req_data|length == 0 %}
+                    <div class="container">
+                        <div class = "home">
+                          <div class="container-fluid position-relative overflow-hidden mb-4 mb-sm-0" style="min-height: 95vh;">
+                              <div class="container mt-xl-5 mt-lg-5">
+                                <div class="row pt-xl-5 pt-lg-5 d-sm-flex flex-column-reverse flex-lg-row text-center text-md-start">
+                                  <div class="col-xl-6 col-lg-7 pt-xl-5 mt-xl-5 mt-lg-5">
+                                    <h3 class="h3 fw-semibold opacity-75">
+                                      <!--       TYPED JS       -->
+                                      <span id="typed"></span>
+                                    </h3>
+                                    <h1 class="h1 fw-bold">Nothing to show here!</h1>
+                                    <p class="">Please add recipes in your favourite list!</p>
+                                    <a href="/getrecipes" class="btn btn-dark">Browse Recipes</a>
+                                  </div>
+                                  <div class="col-xl-6 col-lg-5 mt-lg-5 position-relative">
+                                    <a href = "/getrecipes"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Heart_or_Favorites_Flat_Icon_Vector.svg/1024px-Heart_or_Favorites_Flat_Icon_Vector.svg.png" alt="" class="img-fluid scale-up"></a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    {% else %}
+                    <h3 class="h3 fw-bold">Your favourite recipes!!</h1>
+                    {% for i in req_data %}
+                  <tr>
+                      
+                    <!-- <td><a href="{{ url_for('views.recipeinfo', recipe_id_get = i['recipe_id']) }}" >{{ i['recipe_id'] }}</a></td> -->
+                    <td><a href="{{ url_for('views.recipeinfo', recipe_id_get = i['recipe_id']) }}" >{{ i['name'] }}</a></td>
+                    <td>{{ i['description'] }}</td>
+                    <td>{{ i['avg_rating'] }}</td>
+                    <td>{{ i['time'] }}</td>
+                    <td class = "recipe_images">
+                        <img src = "{{ i['image'] }}">
+                    </td>
+                    <td>{{ i['steps_cnt'] }}</td>
+                    <td><a href="{{ url_for('views.userfavourites', status = True, recipe_id_get = i['recipe_id']) }}"><span class="material-icons md-light">clear</span></a></td>
+                  </tr>
+                  {% endfor %}
+                  {% endif %}
+                </tbody>
+              </table>
+        </div>
+
+    {% endif %}
+</div>
+{% endblock %}

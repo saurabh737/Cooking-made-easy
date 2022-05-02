@@ -1,14 +1,11 @@
 
-.home {
-    /* background: url(cooking-landing-page.png) no-repeat center center fixed; */
-    display: table;
-    height: 100%;
-    position: relative;
+body,html {
     width: 100%;
-    background-size: cover;
+    height: 100%;
 }
 
-.ingredients_text_box {
+#n_ingredients, #cooking_time, #get_recipes_btn {
+    display: inline-block;
     border-radius:0.5em;
     border-color: rgb(139, 150, 150);
 }
@@ -24,4 +21,59 @@
     margin-top: auto;
     margin-left: auto;
     margin-right: auto;
+}
+
+.recipe_images_info {
+    position: relative;
+    top: 50px;
+    width: 500px;
+    height: 250px;
+    display: block;    
+    margin: auto;
+    
+}
+.recipe_images_info img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.recipe_images {
+    width: 300px;
+    height: 200px;
+}
+
+.recipe_images img {
+    width: 100%;
+    height: 100%;
+}
+
+.material-icons.md-light { color: rgb(247, 11, 11); }
+
+.material-icons.md-light :hover { color: rgb(247, 11, 11); }
+
+.material-icons.md-light.md-inactive { color: rgba(238, 228, 228, 0.945); }
+
+
+.landing_page {
+    background-color: #F0D2CB;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    font-family: 'Merienda';
+}
+
+.signup_page {
+    background-color: #F0D2CB;
+    width: 100%;
+    height: 100%;
+}
+
+.signup_banner {
+    width: 100%;
+    height: 100%;
+}
+
+.h2.fw-bold{
+    text-align: center;
 }
